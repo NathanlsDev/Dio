@@ -3,20 +3,8 @@ const ethanolValue = 5.79;
 const KMPerLiter = 10;
 const KMDistance = 275;
 
-const fuelType = "ethanol"; //change type of fuel here! ethanol/gas
+const fuelType = "gas"; //change type of fuel here! ethanol/gas
 const litersNeeded = KMDistance / KMPerLiter;
-
-function fuelConsumption() {
-  if (fuelType === "gas") {
-    const fuelValue = gasValue;
-    const amount = amountSpent(fuelValue);
-    return outputMSG(amount);
-  }
-
-  const fuelValue = ethanolValue;
-  const amount = amountSpent(fuelValue);
-  return outputMSG(amount);
-}
 
 const amountSpent = (fuelValue) => {
   const amountSpent = litersNeeded * fuelValue;
@@ -31,4 +19,14 @@ const outputMSG = (amountSpentFix) => {
   );
 };
 
-fuelConsumption();
+(function fuelConsumption() {
+  if (fuelType === "gas") {
+    const fuelValue = gasValue;
+    const amount = amountSpent(fuelValue);
+    return outputMSG(amount);
+  }
+
+  const fuelValue = ethanolValue;
+  const amount = amountSpent(fuelValue);
+  return outputMSG(amount);
+})();
