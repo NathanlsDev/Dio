@@ -17,5 +17,18 @@ class Person {
   }
 }
 
-const nathan = new Person("Nathan", 27);
-nathan.description();
+function personComparison(person1, person2) {
+  if (person1.age > person2.age) {
+    return console.log(`${person1.name} is older than ${person2.name}.`);
+  }
+  if (person1.age < person2.age) {
+    return console.log(`${person2.name} is older than ${person1.name}.`);
+  }
+
+  return console.log(`${person1.name} and ${person2.name} are the same age.`);
+}
+
+const nathan = new Person("Nathan", 28);
+const flavia = new Person("Flavia", 28);
+
+personComparison(nathan, flavia);
